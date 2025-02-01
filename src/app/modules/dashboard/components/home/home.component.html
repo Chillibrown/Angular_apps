@@ -1,0 +1,111 @@
+<div [hidden]="!isAdminOrStaff" class="col-md-12 ">
+    <div class="row ">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
+            <div class="col-3">
+                <div class="card radius-10 border-start border-0 border-3 border-warning">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-secondary">Total Users</p>
+                                <h4 class="my-1 text-warning"> {{ totalUsers }} </h4>
+                                <!-- <p class="mb-0 font-13">+8.4% from last week</p> -->
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-success text-white ms-auto">
+                                <!-- <i class="fa fa-users"></i> -->
+                                {{ totalUsers }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card radius-10 border-start border-0 border-3 border-warning">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-secondary">Total Customers</p>
+                                <h4 class="my-1 text-warning"> {{ totalCustomers }} </h4>
+                                <!-- <p class="mb-0 font-13">+8.4% from last week</p> -->
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-success text-white ms-auto">
+                                <!-- <i class="fa fa-users"></i> -->
+                                {{ totalCustomers }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card radius-10 border-start border-0 border-3 border-info">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-secondary">Total Halls</p>
+                                <h4 class="my-1 text-info"> {{ totalHalls }} </h4>
+                                <!-- <p class="mb-0 font-13">+2.5% from last week</p> -->
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-success text-white ms-auto">
+                                {{ totalHalls }}
+                                <!-- <i class="fa fa-book"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card radius-10 border-start border-0 border-3 border-danger">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <p class="mb-0 text-secondary">Total Bookings</p>
+                                <h4 class="my-1 text-danger">{{ totalBookings | number }} </h4>
+                            </div>
+                            <div class="widgets-icons-2 rounded-circle bg-success text-white ms-auto">
+                                {{ totalBookings | number }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CUSTOMER -->
+ <span [hidden]="!isACustomer">
+ <div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let hall of halls" class="col-md-3">
+      <div class="card">
+        <div class="card-header text-center fw-bold">
+          {{ hall?.name }}
+        </div>
+        <div class="card-body">
+          <div class="">
+            <span class="fw-bold me-4">Address: </span>
+            <span>{{ hall?.address }}</span>
+          </div>
+          <div class="mt-2">
+            <span class="fw-bold me-3">Capacity: </span>
+            <span>{{ hall?.capacity | number }}</span>
+          </div>
+          <div class="mt-2">
+            <span class="fw-bold me-4">Price: </span>
+            <span class="ms-3">{{ hall?.price | number }}</span>
+          </div>
+        </div>
+        <div class="card-footer">
+            <span *ngIf="hall?.status === 'Pending'">
+                <button (click)="makeHallBooking(hall?.hallId)" class="btn btn-primary btn-sm shadow-none">Book Now</button>
+            </span>
+            <span *ngIf="hall?.status === 'Booked'">
+                <button class="btn btn-success btn-sm shadow-none">Booked</button>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+ </span>

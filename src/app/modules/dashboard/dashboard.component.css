@@ -1,0 +1,124 @@
+/* sidebar */
+
+.sidebar {
+    /* background-color: black; */
+    /* background-color: #1D2939; */
+    background-color: #0e2238;
+    /* background-color: #1D2939; */
+    height: 100vh;
+}
+
+.dropdown-toggle {
+    float: right;
+}
+
+/* .br-menu-link.active {
+    background-color: #00b297;
+    color: #fff;
+} */
+/* .current {
+    background-color: #00b297;
+    border-radius: 7px;
+    box-shadow: 2px 5px 10px #111;
+    transition: all .3s;
+} */
+
+/* .sidebar ul li .current:hover {
+    border-radius: 7px;
+    box-shadow: 2px 5px 20px #111;
+    margin-left: 10px;
+} */
+
+.sidebar ul li {
+    text-transform: capitalize;
+}
+
+
+.sidebar .border-bottom a {
+    text-decoration: none;
+    font-size: 17px;
+    font-style: italic;
+}
+
+/* .sidebar ul li a span {
+    padding-left: 0px;
+} */
+.sidebar ul li a span:hover {
+    color: #00b5c2;
+}
+
+.sidebar ul li a {
+    transition: all .3s;
+}
+
+
+.sidebar ul li a:hover {
+    cursor: pointer;
+    border-radius: 7px;
+    /* background-color: gray; */
+    background-color: #0c3549;
+    /* margin-left: 20px; color: red; */
+}
+
+
+.sidebar ul li .drop-bg  {
+    padding: 10px;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+.sidebar ul li .drop-bg:hover {
+    margin-left: 0px;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+/* end of sidebar */
+
+
+
+/* top navbar */
+.top-navbar {
+    /* background: #0f1216; */
+    background: #fff;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.icon-parent {
+    position: relative;
+}
+
+.icon-bullet::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    height: 12px;
+    width: 12px;
+    /* background-color: #f44336; */
+    border-radius: 50%;
+}
+
+
+.fa-squeeze {
+    margin-left: 300px;
+}
+
+
+
+
+
+/* tunazfny icon ztu zshuke chin */
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+
+    .top-navbar {
+        position: static;
+    }
+}
+
+
+/* end of top navbaf */

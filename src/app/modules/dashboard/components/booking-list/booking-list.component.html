@@ -1,0 +1,47 @@
+<div class="container-fluid mt-3">
+    <table class="table table-bordered table-hover bg-white text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Hall Name</th>
+                <th scope="col">Hall Price</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="
+            let booking of bookings
+              | paginate
+                : {
+                    itemsPerPage: tableSize,
+                    currentPage: pageNumber,
+                    totalItems: count
+                  };
+            let i = index
+          ">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ booking?.customer?.firstName }} {{ booking?.customer?.secondName }} {{
+                    booking?.customer?.lastName }}</td>
+                <td>{{ booking?.hall?.name }}</td>
+                <td>{{ booking?.hall?.price | number }}</td>
+                <td>{{ booking?.date }}</td>
+                <td>
+                    <span class="badge bg-success">Booked</span>
+                </td>             
+            </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation" style="cursor: pointer">
+        <ul class="pagination justify-content-end">
+            <li class="bg-white">
+                <a class="">
+                    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)"
+                        class="" style="cursor: pointer">
+                    </pagination-controls>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

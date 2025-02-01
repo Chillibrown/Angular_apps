@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-md-9">
+            <div class="card">
+                <div class="card-header text-center fw-bold p-3">
+                    {{ currentUser.username }}
+                </div>
+                <div class="card-body">
+                    <form #updateUserForm="ngForm">
+                        <div class="row">
+                            <div class="form-group col-md-6 mb-3">
+                                <label class="form-label">First Name</label>
+                                <input type="text" [(ngModel)]="currentUser.firstName" name="firstName"
+                                    placeholder="First Name" class="form-control shadow-none" required>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" [(ngModel)]="currentUser.lastName" name="lastName"
+                                    placeholder="Last Name" class="form-control shadow-none" required>
+                            </div>
+                            <div class="form-group col-md-6 mb-3">
+                                <label class="form-label">Username</label>
+                                <input type="text" [(ngModel)]="currentUser.username" name="username"
+                                    placeholder="Username" class="form-control shadow-none" required>
+                            </div>
+                       
+                            <div class="form-group col-md-6 mb-3">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" [(ngModel)]="currentUser.phoneNumber" name="phoneNumber"
+                                    placeholder="Phone Number" class="form-control shadow-none"
+                                    #phoneNumberInput="ngModel" required>
+                            </div>
+                          
+
+                            <!-- BUTTON -->
+                            <button type="submit" (click)="onUpdateUser()" id="btnUpdateUserProfile"
+                                [hidden]="true"></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button type="button" (click)="onSaveUpdateUserProfile()" class="btn col-md-6 btnProfile">Save
+                        Changes
+                    </button>
+                    <button type="button" routerLink="/dashboard/home" class="btn btn-warning col-md-5 float-end">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

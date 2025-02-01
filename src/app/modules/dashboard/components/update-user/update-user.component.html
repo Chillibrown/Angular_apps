@@ -1,0 +1,51 @@
+<div class="container-fluid d-flex justify-content-center">
+    <div class="container">
+        <form #updateUserForm="ngForm">
+            <div class="title text-uppercase text-center mb-4">
+                <h4 class="fw-bold">update user form</h4>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 mb-4 form-group">
+                    <label for="">First Name</label>
+                    <input type="text" name="firstName" [(ngModel)]="updateUser.firstName"
+                        class="form-control input-box" required>
+                </div>
+                <div class="col-md-6 mb-4 form-group">
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastName" [(ngModel)]="updateUser.lastName" class="form-control input-box"
+                        required>
+                </div>
+                <div class="col-md-4 mb-4 form-group">
+                    <label for="">Username</label>
+                    <input type="text" name="username" [(ngModel)]="updateUser.username" class="form-control input-box"
+                        required>
+                </div>
+              
+                <div class="col-md-4 mb-4 form-group">
+                    <label for="">Phone No</label>
+                    <input type="text" name="phoneNumber" [(ngModel)]="updateUser.phoneNumber"
+                        class="form-control input-box" required>
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label for="exampleInputEmail1" class="form-label">Role</label>
+                    <select name="role" [(ngModel)]="updateUser.role" required ngModel="ROLE_CUSTOMER" id=""
+                        class="form-control">
+                        <option value="ROLE_ADMIN">ADMIN</option>
+                        <option value="ROLE_STAFF">STAFF</option>
+                        <option value="ROLE_CUSTOMER">CUSTOMER</option>
+                    </select>
+                </div>
+               
+                <div class="form-group mt-4 col-md-12">
+                    <button type="submit" (click)="updateUserInfo()" class="btn btn-primary col-md-6 btnUpdateUser">Save
+                        Changes
+                    </button>
+                    <button type="button" routerLink="/dashboard/user-list"
+                        class="btn btn-warning float-end col-md-5">Cancel
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

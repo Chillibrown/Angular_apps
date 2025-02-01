@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-center min-vh-100 align-items-center">
+            <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)" class="col-md-6">
+                <div class="title text-uppercase text-center mb-4">
+                    <!-- <h4 class="fw-bold"> login form</h4> -->
+                    <img src="../../../assets/images/vector.png" width="170" height="170" class="rounded-circle"
+                        alt="">
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 mb-4 ">
+                        <label for="">Username</label>
+                        <input type="text" name="username" ngModel class="form-control shadow-none"
+                            placeholder="Username" required>
+                    </div>
+                    <div class="col-md-12 mb-3 ">
+                        <label for="">Password</label>
+                        <input type="password" name="password" ngModel class="form-control shadow-none"
+                            placeholder="**********" required>
+                    </div>
+
+                    <div class="row mb-2 mt-3">
+                        <div class="col-md-6">
+                            <button [disabled]="loginForm.invalid"
+                                class="btn btn-success btn-block col-md-12 shadow-none">Login</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button routerLink="/register-customer" type="submit"
+                                class="btn btn-primary btn-block col-md-12 shadow-none">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
